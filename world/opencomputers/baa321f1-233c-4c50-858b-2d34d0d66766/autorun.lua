@@ -1,0 +1,1 @@
+print("Bienvenu maître Fabirot0")

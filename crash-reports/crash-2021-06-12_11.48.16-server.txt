@@ -1,0 +1,246 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  IELoadingPlugin (ImmersiveEngineering-core-0.12-89.jar)
+  Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  EnderCorePlugin (EnderCore-1.12.2-0.5.76-core.jar)
+  MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.281.jar)
+  TransformerLoader (OpenComputers-MC1.12.2-1.7.5.192.jar)
+  MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  AppleCore (AppleCore-mc1.12.2-3.4.0.jar)
+  CoreMod (Aroma1997Core-1.12.2-2.0.0.2.jar)
+  CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+  IELoadingPlugin (ImmersiveEngineering-0.12-80-core.jar)
+Contact their authors BEFORE contacting forge
+
+// Don't do that.
+
+Time: 6/12/21 11:48 AM
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at net.minecraft.world.World.func_189508_F(World.java:2421)
+	at net.minecraft.world.World.func_175625_s(World.java:2397)
+	at blusunrize.immersiveengineering.api.ApiUtils.toIIC(ApiUtils.java:348)
+	at blusunrize.immersiveengineering.api.ApiUtils.toIIC(ApiUtils.java:336)
+	at blusunrize.immersiveengineering.common.blocks.metal.TileEntityConnectorLV.notifyAvailableEnergy(TileEntityConnectorLV.java:420)
+	at blusunrize.immersiveengineering.common.blocks.metal.TileEntityConnectorLV.func_73660_a(TileEntityConnectorLV.java:79)
+	at net.minecraft.world.World.func_72939_s(World.java:1838)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.World.func_189508_F(World.java:2421)
+	at net.minecraft.world.World.func_175625_s(World.java:2397)
+	at blusunrize.immersiveengineering.api.ApiUtils.toIIC(ApiUtils.java:348)
+	at blusunrize.immersiveengineering.api.ApiUtils.toIIC(ApiUtils.java:336)
+	at blusunrize.immersiveengineering.common.blocks.metal.TileEntityConnectorLV.notifyAvailableEnergy(TileEntityConnectorLV.java:420)
+	at blusunrize.immersiveengineering.common.blocks.metal.TileEntityConnectorLV.func_73660_a(TileEntityConnectorLV.java:79)
+
+-- Block entity being ticked --
+Details:
+	Name: immersiveengineering:connectorhv // blusunrize.immersiveengineering.common.blocks.metal.TileEntityConnectorHV
+	Block type: ID #1574 (tile.immersiveengineering.connector // blusunrize.immersiveengineering.common.blocks.metal.BlockConnector // immersiveengineering:connector)
+	Block data value: 4 / 0x4 / 0b0100
+	Block location: World: (3562,76,-1153), Chunk: (at 10,4,15 in 222,-73; contains blocks 3552,0,-1168 to 3567,255,-1153), Region: (6,-3; contains chunks 192,-96 to 223,-65, blocks 3072,0,-1536 to 3583,255,-1025)
+	Actual block type: ID #1574 (tile.immersiveengineering.connector // blusunrize.immersiveengineering.common.blocks.metal.BlockConnector // immersiveengineering:connector)
+	Actual block data value: 4 / 0x4 / 0b0100
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1838)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 3 total; [GCEntityPlayerMP['fabirot0'/49627, l='world', x=3383.34, y=63.00, z=-944.17], GCEntityPlayerMP['Antonio_57'/104571, l='world', x=2601.26, y=32.00, z=-567.31], GCEntityPlayerMP['ElCartelo'/62034, l='world', x=267.03, y=68.50, z=-1549.74]]
+	Chunk stats: ServerChunkCache: 1169 Drop: 0
+	Level seed: 27594263
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (1105,69,-114), Chunk: (at 1,4,14 in 69,-8; contains blocks 1104,0,-128 to 1119,255,-113), Region: (2,-1; contains chunks 64,-32 to 95,-1, blocks 1024,0,-512 to 1535,255,-1)
+	Level time: 45684484 game time, 46195355 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 59733 (now: false), thunder time: 59691 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.9.0-15-amd64
+	Java Version: 1.8.0_282, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2293976624 bytes (2187 MB) / 4574412800 bytes (4362 MB) up to 7635730432 bytes (7282 MB)
+	JVM Flags: 2 total; -Xms128M -Xmx8192M
+	IntCache: cache: 0, tcache: 0, allocated: 15, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2854 92 mods loaded, 92 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                                | Version                  | Source                                             | Signature                                |
+	|:------ |:--------------------------------- |:------------------------ |:-------------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft                         | 1.12.2                   | minecraft.jar                                      | None                                     |
+	| LCHIJA | mcp                               | 9.42                     | minecraft.jar                                      | None                                     |
+	| LCHIJA | FML                               | 8.0.99.99                | forge-1.12.2-14.23.5.2854.jar                      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge                             | 14.23.5.2854             | forge-1.12.2-14.23.5.2854.jar                      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | micdoodlecore                     |                          | minecraft.jar                                      | None                                     |
+	| LCHIJA | opencomputers|core                | 1.7.5.192                | minecraft.jar                                      | None                                     |
+	| LCHIJA | securitycraft                     | v1.8.12.1                | [1.12.2]+SecurityCraft+v1.8.12.1.jar               | None                                     |
+	| LCHIJA | applecore                         | 3.4.0                    | AppleCore-mc1.12.2-3.4.0.jar                       | None                                     |
+	| LCHIJA | jei                               | 4.15.0.291               | jei_1.12.2.jar                                     | None                                     |
+	| LCHIJA | appleskin                         | 1.0.9                    | AppleSkin-mc1.12.2.jar                             | None                                     |
+	| LCHIJA | appliedenergistics2               | rv6-stable-7             | appliedenergistics2-rv6-stable-7.jar               | dfa4d3ac143316c6f32aa1a1beda1e34d42132e5 |
+	| LCHIJA | aroma1997core                     | 2.0.0.2                  | Aroma1997Core-1.12.2-2.0.0.2.jar                   | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+	| LCHIJA | baubles                           | 1.5.2                    | Baubles-1.12-1.5.2.jar                             | None                                     |
+	| LCHIJA | bibliocraft                       | 2.4.5                    | BiblioCraft-Mod-1.12.2.jar                         | None                                     |
+	| LCHIJA | codechickenlib                    | 3.2.3.358                | CodeChickenLib-1.12.2-3.2.3.358-universal.jar      | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | redstoneflux                      | 2.1.0                    | RedstoneFlux-1.12-2.1.0.6-universal.jar            | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| LCHIJA | brandonscore                      | 2.4.19                   | BrandonsCore-1.12.2-2.4.19.214-universal.jar       | None                                     |
+	| LCHIJA | buildcraftlib                     | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftcore                    | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftbuilders                | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcrafttransport               | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftsilicon                 | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftenergy                  | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | ic2                               | 2.8.1001                 | IC2Classic+1.12-1.5.5.2.1.jar                      | None                                     |
+	| LCHIJA | forestry                          | 5.8.2.387                | forestry_1_12_2.jar                                | None                                     |
+	| LCHIJA | buildcraftcompat                  | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftfactory                 | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | buildcraftrobotics                | 7.99.24.7                | buildcraft-all-7.99.24.7.jar                       | None                                     |
+	| LCHIJA | chameleon                         | 1.12-4.1.3               | Chameleon-1.12-4.1.3.jar                           | None                                     |
+	| LCHIJA | chisel                            | MC1.12.2-1.0.2.45        | Chisel-Mod-1.12.2.jar                              | None                                     |
+	| LCHIJA | cofhcore                          | 4.6.6                    | CoFHCore-1.12.2-4.6.6.1-universal.jar              | None                                     |
+	| LCHIJA | cofhworld                         | 1.4.0                    | CoFHWorld-1.12.2-1.4.0.1-universal.jar             | None                                     |
+	| LCHIJA | configmod                         | v1.0                     | coroutil-1.12.1-1.2.36.jar                         | None                                     |
+	| LCHIJA | extendedrenderer                  | v1.0                     | coroutil-1.12.1-1.2.36.jar                         | None                                     |
+	| LCHIJA | coroutil                          | 1.12.1-1.2.36            | coroutil-1.12.1-1.2.36.jar                         | None                                     |
+	| LCHIJA | aroma1997sdimension               | 2.0.0.2                  | Dimensional-World-Mod-1.12.2.jar                   | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+	| LCHIJA | economy                           | 1.5                      | EconomyInc-1.6.2MC1.12.jar                         | None                                     |
+	| LCHIJA | endercore                         | 1.12.2-0.5.76            | EnderCore-1.12.2-0.5.76.jar                        | None                                     |
+	| LCHIJA | thermalfoundation                 | 2.6.7                    | ThermalFoundation-1.12.2-2.6.7.1-universal.jar     | None                                     |
+	| LCHIJA | enderio                           | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderiointegrationtic             | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderiobase                       | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderioconduits                   | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderioconduitsappliedenergistics | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | opencomputers                     | 1.7.5.192                | OpenComputers-MC1.12.2-1.7.5.192.jar               | None                                     |
+	| LCHIJA | enderioconduitsopencomputers      | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderioconduitsrefinedstorage     | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderiointegrationforestry        | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | mantle                            | 1.12-1.3.3.55            | Mantle-1_12_2.jar                                  | None                                     |
+	| LCHIJA | tconstruct                        | 1.12.2-2.12.0.135        | TConstruct-1.12.2-2.12.0.135.jar                   | None                                     |
+	| LCHIJA | enderiointegrationticlate         | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | ftblib                            | 5.4.7.2                  | FTBLib-5.4.7.2.jar                                 | None                                     |
+	| LCHIJA | enderiomachines                   | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | enderiopowertools                 | 5.1.51                   | Ender-IO-Mod-1.12.2.jar                            | None                                     |
+	| LCHIJA | zerocore                          | 1.12-0.1.2.3             | zerocore-1.12-0.1.2.3.jar                          | None                                     |
+	| LCHIJA | bigreactors                       | 1.12.2-0.4.5.50          | ExtremeReactors-1.12.2.jar                         | None                                     |
+	| LCHIJA | flansmod                          | 5.6.0-beta.10            | Flan's+Mod-1.12.2-5.6.0-beta.10-all.jar            | None                                     |
+	| LCHIJA | forgemultipartcbe                 | 2.6.2.83                 | ForgeMultipart-1.12.2-2.6.2.83-universal.jar       | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | microblockcbe                     | 2.6.2.83                 | ForgeMultipart-1.12.2-2.6.2.83-universal.jar       | None                                     |
+	| LCHIJA | minecraftmultipartcbe             | 2.6.2.83                 | ForgeMultipart-1.12.2-2.6.2.83-universal.jar       | None                                     |
+	| LCHIJA | ftbutilities                      | 5.4.1.130                | FTB-Utilities-1_12_2.jar                           | None                                     |
+	| LCHIJA | galacticraftcore                  | 4.0.2.281                | GalacticraftCore-1.12.2-4.0.2.281.jar              | None                                     |
+	| LCHIJA | galacticraftplanets               | 4.0.2.281                | Galacticraft-Planets-1.12.2-4.0.2.281.jar          | None                                     |
+	| LCHIJA | ic2-classic-spmod                 | 0.0.0.0                  | IC2Classic+1.12-1.5.5.2.1.jar                      | None                                     |
+	| LCHIJA | gtclassic                         | 1.1.6                    | GTClassic-1.1.6.jar                                | None                                     |
+	| LCHIJA | waila                             | 1.8.26                   | Hwyla-1.8.26-B41_1.12.2.jar                        | None                                     |
+	| LCHIJA | icbmclassic                       | 1.12.2-4.0.1.75          | ICBM-classic-1.12.2-4.0.1b75.jar                   | None                                     |
+	| LCHIJA | immersiveengineering              | 0.12-89                  | Immersive-Engineering-Mod-1.12.2.jar               | 4cb49fcde3b43048c9889e0a3d083225da926334 |
+	| LCHIJA | immersivepetroleum                | 1.1.9                    | immersivepetroleum-1.12.2-1.1.9.jar                | None                                     |
+	| LCHIJA | trackapi                          | 1.2                      | TrackAPI-1.2.jar                                   | None                                     |
+	| LCHIJA | universalmodcore                  | 1.0.0                    | UniversalModCore-1.12.2-forge-1.0.0.jar            | None                                     |
+	| LCHIJA | immersiverailroading              | 1.8.0-7e0f82             | ImmersiveRailroading-1.12.2-forge-1.8.0-7e0f82.jar | None                                     |
+	| LCHIJA | inventorytweaks                   | 1.63+release.109.220f184 | InventoryTweaks-1.63.jar                           | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+	| LCHIJA | journeymap                        | 1.12.2-5.7.1             | journeymap-1.12.2-5.7.1.jar                        | None                                     |
+	| LCHIJA | malisiscore                       | 1.12.2-6.5.1-SNAPSHOT    | malisiscore-1.12.2-6.5.1.jar                       | None                                     |
+	| LCHIJA | malisisdoors                      | 1.12.2-7.3.0             | malisisdoors-1.12.2-7.3.0.jar                      | None                                     |
+	| LCHIJA | mcjtylib_ng                       | 3.5.4                    | mcjtylib-1.12-3.5.4.jar                            | None                                     |
+	| LCHIJA | llibrary                          | 1.7.20                   | llibrary-1.7.20-1.12.2.jar                         | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+	| LCHIJA | mowziesmobs                       | 1.5.8                    | mowziesmobs-1.5.8.jar                              | None                                     |
+	| LCHIJA | mrtjpcore                         | 2.1.4.43                 | MrTJPCore-1.12.2-2.1.4.43-universal.jar            | None                                     |
+	| LCHIJA | harvestcraft                      | 1.12.2zb                 | Pam's+HarvestCraft+1.12.2zg.jar                    | None                                     |
+	| LCHIJA | projectred-core                   | 4.9.4.120                | ProjectRed-1.12.2-4.9.4.120-Base.jar               | None                                     |
+	| LCHIJA | projectred-integration            | 4.9.4.120                | ProjectRed-1.12.2-4.9.4.120-integration.jar        | None                                     |
+	| LCHIJA | projectred-transmission           | 4.9.4.120                | ProjectRed-1.12.2-4.9.4.120-integration.jar        | None                                     |
+	| LCHIJA | projectred-illumination           | 4.9.4.120                | ProjectRed-1.12.2-4.9.4.120-lighting.jar           | None                                     |
+	| LCHIJA | rftools                           | 7.73                     | rftools-1.12-7.73.jar                              | None                                     |
+	| LCHIJA | storagedrawers                    | 1.12.2-5.4.0             | Storage-Drawers-Mod-1.12.2.jar                     | None                                     |
+	| LCHIJA | thermaldynamics                   | 2.5.6                    | ThermalDynamics-1.12.2-2.5.6.1-universal.jar       | None                                     |
+	| LCHIJA | tombstone                         | 3.7.3                    | tombstone-1.12.2.jar                               | None                                     |
+	| LCHIJA | wawla                             | 2.6.275                  | Wawla_1.12.2_2.6.275.jar                           | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | weather2                          | 1.12.1-2.6.12            | weather2-1.12.1-2.6.12.jar                         | None                                     |
+	| LCHIJA | wrcbe                             | 2.3.2                    | WR-CBE-1.12.2-2.3.2.33-universal.jar               | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+
+	Loaded coremods (and transformers): 
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+IELoadingPlugin (ImmersiveEngineering-core-0.12-89.jar)
+  blusunrize.immersiveengineering.common.asm.IEClassTransformer
+Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  invtweaks.forge.asm.ContainerTransformer
+EnderCorePlugin (EnderCore-1.12.2-0.5.76-core.jar)
+  com.enderio.core.common.transform.EnderCoreTransformer
+  com.enderio.core.common.transform.SimpleMixinPatcher
+MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.281.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+TransformerLoader (OpenComputers-MC1.12.2-1.7.5.192.jar)
+  li.cil.oc.common.asm.ClassTransformer
+MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  
+AppleCore (AppleCore-mc1.12.2-3.4.0.jar)
+  squeek.applecore.asm.TransformerModuleHandler
+CoreMod (Aroma1997Core-1.12.2-2.0.0.2.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+IELoadingPlugin (ImmersiveEngineering-0.12-80-core.jar)
+  blusunrize.immersiveengineering.common.asm.IEClassTransformer
+	AE2 Version: stable rv6-stable-7 for Forge 14.23.5.2768
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- chiselIntegration (Enabled/Not Forced)
+		- wailaIntegration (Enabled/Not Forced)
+
+	Ender IO: No known problems detected.
+
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!You are looking at the diagnostics information, not at the crash.       !!!
+	!!!Scroll up until you see the line with '---- Minecraft Crash Report ----'!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	AE2 Integration: IC2:ON, RC:OFF, MFR:OFF, Waila:ON, Mekanism:OFF, OpenComputers:ON, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:OFF
+	Profiler Position: N/A (disabled)
+	Player Count: 3 / 8; [GCEntityPlayerMP['fabirot0'/49627, l='world', x=3383.34, y=63.00, z=-944.17], GCEntityPlayerMP['Antonio_57'/104571, l='world', x=2601.26, y=32.00, z=-567.31], GCEntityPlayerMP['ElCartelo'/62034, l='world', x=267.03, y=68.50, z=-1549.74]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
